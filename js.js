@@ -12,23 +12,53 @@ $(document).ready(function () {
         explore: ["#tem", "#led", "#sed", "#med"]
     }//end of hideMe object
 
-     var choiceArr = [];
+    var choiceArr = [];
+
+    function reset() {
+        choiceArr = [];
+        var showMeArray = [
+            "#gauss",
+            "#surface",
+            "#fiber",
+            "#machine",
+            "#tem",
+            "#led",
+            "#sed",
+            "#med",
+            "#explore",
+        ];//end of showMeArray
+        for (j = 0; j < showMeArray.length; j++) {
+            $(showMeArray[j]).show("fast");
+        }//end of loop
+        $("#info").empty();
+    }//end of reset function
+
+
+    function infoPanel() {
+        var div = $("<div>" + choiceArr[0] + " " + choiceArr[1] + "</div>");
+        var button = $("<button>");
+        button.html("click me");
+        button.on("click", function () {
+            reset();
+        });
+        $("#info").append(div);
+        $("#info").append(button);
+        $("#info").show("fast");
+        console.log(choiceArr);
+    }//end of infoPanel function
 
     $(".routecard").on("click", function () {
         var clickedId = $(this).attr("id");
         for (var i = 0; i < hideMe[clickedId].length; i++) {
             $(hideMe[clickedId][i]).hide("fast");
         }//end of loop
-    
         choiceArr.push(clickedId);
-
         if (choiceArr.length === 2) {
-                var div = $("<div>" + choiceArr[0] + " " + choiceArr[1] + "</div>");
-                
-                $("#info").append(div);
-            console.log(choiceArr);
-        };//end of conditional
-
+            infoPanel();
+        } else if (clickedId === "explore") {
+            alert("hello");
+        } else if (choiceArr.indexOf(clickedId) === choiceArr[0] || choiceArr[1]) {
+            reset();
+        }//end of conditional
     });//end of OnClick
-
 });//end of ready function
