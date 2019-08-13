@@ -48,7 +48,7 @@ $(document).ready(function () {
         } else if (choiceArr[0] === "tem" && choiceArr[1] === "gauss") {
             alert("gauss and tem");
         }
-        
+
         if (choiceArr[0] === "surface" && choiceArr[1] === "tem") {
             alert("surface and tem");
         } else if (choiceArr[0] === "tem" && choiceArr[1] === "surface") {
@@ -109,7 +109,7 @@ $(document).ready(function () {
             alert("machine and sed");
         }
 
-        console.log(choiceArr);
+        console.log("User picks =" + " " + choiceArr);
         /*
                 var div = $("<div>" + choiceArr[0] + " " + choiceArr[1] + "</div>");
                 var button = $("<button>");
