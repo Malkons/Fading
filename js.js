@@ -13,23 +13,31 @@ $(document).ready(function () {
     }//end of hideMe object
 
     var relationshipObj = {
-        gauss: [["tem", "details1"]],
+        gauss: [["tem", "details1"],
+                ["explore", "details14"]
+    ],
 
         surface: [
             ["tem", "details2"],
             ["led", "details5"],
             ["sed", "details8"],
-            ["med", "details11"]],
+            ["med", "details11"],
+            ["explore", "details15"]
+        ],
 
         fiber: [
             ["tem", "details3"],
             ["led", "details6"],
             ["sed", "details9"],
-            ["med", "details12"]],
+            ["med", "details12"],
+            ["explore", "details16"]
+        ],
 
         machine: [
             ["led", "details7"],
-            ["sed", "details10"]],
+            ["sed", "details10"],
+            ["explore", "details17"]
+        ],
 
         tem: [
             ["gauss", "details1"],
@@ -104,6 +112,10 @@ $(document).ready(function () {
         details12: {
             title: "Fiber and MED",
             info: "Here is some information about Fiber and MED"
+        },
+        details14: {
+            title: "Gauss and Explore",
+            info: "Here is some information about Surface and Explore"
         },
         details15: {
             title: "Surface and Explore",
