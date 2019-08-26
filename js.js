@@ -67,39 +67,39 @@ $(document).ready(function () {
         },
         details4: {
             title: "Gauss and Tem",
-            info: "Here is some information about Gauss and tem"
+            info: "Here is some information about Gauss and Tem"
         },
         details5: {
-            title: "Surface and led",
-            info: "Here is some information about Surface and led"
+            title: "Surface and LED",
+            info: "Here is some information about Surface and LED"
         },
         details6: {
-            title: "Fiber and led",
-            info: "Here is some information about Fiber and led"
+            title: "Fiber and LED",
+            info: "Here is some information about Fiber and LED"
         },
         details7: {
-            title: "Machine and led",
-            info: "Here is some information about Machine and led"
+            title: "Machine and LED",
+            info: "Here is some information about Machine and LED"
         },
         details8: {
-            title: "Surface and sed",
-            info: "Here is some information about Surface and sed"
+            title: "Surface and SED",
+            info: "Here is some information about Surface and SED"
         },
         details9: {
-            title: "Fiber and sed",
-            info: "Here is some information about Fiber and sed"
+            title: "Fiber and SED",
+            info: "Here is some information about Fiber and SED"
         },
         details10: {
-            title: "Machine and sed",
-            info: "Here is some information about Machine and sed"
+            title: "Machine and SED",
+            info: "Here is some information about Machine and SED"
         },
         details11: {
-            title: "Fiber and med",
-            info: "Here is some information about Fiber and med"
+            title: "Fiber and MED",
+            info: "Here is some information about Fiber and MED"
         },
         details12: {
-            title: "Fiber and med",
-            info: "Here is some information about Fiber and med"
+            title: "Fiber and MED",
+            info: "Here is some information about Fiber and MED"
         }
     };//end of info object
 
@@ -132,14 +132,12 @@ $(document).ready(function () {
                 var test = relationshipObj[firstChoice][i][1];
                 $.each(infoObj, function (key, valueObj) {
                     if (key === test) {
-
                         var infoDiv = $("<div id='innerInfo' class='card-body'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><div class='card-text text-center'>" + valueObj.info + "</div></div>");
                         var button = $("<button>");
-                        button.html("reset");
+                        button.html("Explore More Options");
                         button.on("click", function () {
                             reset();
                         });
-
                         $("#info").append(infoDiv);
                         $("#innerInfo").append(button);
                     }//end of inner conditional
