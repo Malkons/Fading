@@ -1,8 +1,7 @@
-.card-body {
-    width: 150px;
+.routecard {
+    width: 160px;
     height: 15rem;
+    margin-right: 15px;
 }
 
-.firstDeck {
-    width: 914px;
-}
+

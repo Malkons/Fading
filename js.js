@@ -132,14 +132,16 @@ $(document).ready(function () {
                 var test = relationshipObj[firstChoice][i][1];
                 $.each(infoObj, function (key, valueObj) {
                     if (key === test) {
-                        var infoDiv = $("<div>" + valueObj.title + ":" + " " + valueObj.info + "</div>");
+
+                        var infoDiv = $("<div id='innerInfo' class='card-body'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><div class='card-text text-center'>" + valueObj.info + "</div></div>");
                         var button = $("<button>");
                         button.html("reset");
                         button.on("click", function () {
                             reset();
                         });
+
                         $("#info").append(infoDiv);
-                        $("#info").append(button);
+                        $("#innerInfo").append(button);
                     }//end of inner conditional
                 });//end of inner loop
             }//end of  outter conditional
