@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
     var hideMe = {
-        gauss: ["#surface", "#fiber", "#machine", "#led", "#sed", "#med"],
-        surface: ["#gauss", "#fiber", "#machine"],
-        fiber: ["#gauss", "#surface", "#machine"],
-        machine: ["#gauss", "#surface", "#fiber", "#tem", "#med"],
-        tem: ["#machine", "#led", "#sed", "#med"],
-        led: ["#gauss", "#tem", "#sed", "#med", "#explore"],
-        sed: ["#gauss", "#tem", "#led", "#med", "#explore"],
-        med: ["#gauss", "#machine", "#tem", "#led", "#sed", "#explore"],
-        explore: ["#tem", "#led", "#sed", "#med"]
+        gauss: ["#surfaceCol", "#fiberCol", "#machineCol", "#ledCol", "#sedCol", "#medCol"],
+        surface: ["#gaussCol", "#fiberCol", "#machineCol"],
+        fiber: ["#gaussCol", "#surfaceCol", "#machineCol"],
+        machine: ["#gaussCol", "#surfaceCol", "#fiberCol", "#temCol", "#medCol"],
+        tem: ["#machineCol", "#ledCol", "#sedCol", "#medCol"],
+        led: ["#gaussCol", "#temCol", "#sedCol", "#medCol", "#exploreCol"],
+        sed: ["#gaussCol", "#temCol", "#ledCol", "#medCol", "#exploreCol"],
+        med: ["#gaussCol", "#machineCol", "#temCol", "#ledCol", "#sedCol", "#exploreCol"],
+        explore: ["#temCol", "#ledCol", "#sedCol", "#medCol"]
     }//end of hideMe object
 
     var relationshipObj = {
@@ -49,6 +49,7 @@ $(document).ready(function () {
         med: [
             ["surface", "details11"],
             ["fiber", "details12"]],
+        explore: []
     };//end relationship object
 
     var infoObj = {
@@ -107,15 +108,15 @@ $(document).ready(function () {
     function reset() {
         choiceArr = [];
         var showMeArray = [
-            "#gauss",
-            "#surface",
-            "#fiber",
-            "#machine",
-            "#tem",
-            "#led",
-            "#sed",
-            "#med",
-            "#explore",
+            "#gaussCol",
+            "#surfaceCol",
+            "#fiberCol",
+            "#machineCol",
+            "#temCol",
+            "#ledCol",
+            "#sedCol",
+            "#medCol",
+            "#exploreCol",
         ];//end of showMeArray
         for (j = 0; j < showMeArray.length; j++) {
             $(showMeArray[j]).show("fast");
@@ -142,7 +143,7 @@ $(document).ready(function () {
                     }//end of inner conditional
                 });//end of inner loop
             }//end of  outter conditional
-        }//end of loop
+        }//end of outter loop
     }//end of infoPanel function
 
     $(".routecard").on("click", function () {
