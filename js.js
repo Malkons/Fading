@@ -14,8 +14,8 @@ $(document).ready(function () {
 
     var relationshipObj = {
         gauss: [["tem", "details1"],
-                ["explore", "details14"]
-    ],
+        ["explore", "details14"]
+        ],
 
         surface: [
             ["tem", "details2"],
@@ -163,7 +163,7 @@ $(document).ready(function () {
                 var test = relationshipObj[firstChoice][i][1];
                 $.each(infoObj, function (key, valueObj) {
                     if (key === test) {
-                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><div class='card-text text-center'>" + valueObj.info + "</div></div>");
+                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><br><br><br><div class='card-text text-center'>" + valueObj.info + "</div></div>");
                         var button = $("<button>");
                         button.html("Reset");
                         button.on("click", function () {
@@ -183,7 +183,11 @@ $(document).ready(function () {
             $(hideMe[clickedId][i]).hide("fast");
         }//end of loop
         choiceArr.push(clickedId);
-        if (choiceArr.length === 2) {
+        console.log(choiceArr);
+        if (choiceArr[0] === choiceArr[1]) {
+            reset();
+        }
+        else if (choiceArr.length === 2) {
             infoPanel();
         } else if (clickedId === "explore") {
             explore();
