@@ -1,7 +1,18 @@
 .routecard {
     width: 160px;
     height: 15rem;
-    margin-right: 15px;
+    margin-right: 15px !important;
+    margin-top: 15px;
 }
 
+.stretch {
+    height: 30rem;
+}
 
+.widthrow {
+    width: 100px;
+}
+
+#info {
+    float:right;
+}

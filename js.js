@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    $("#info").hide();
     var hideMe = {
         gauss: ["#surfaceCol", "#fiberCol", "#machineCol", "#ledCol", "#sedCol", "#medCol"],
         surface: ["#gaussCol", "#fiberCol", "#machineCol"],
@@ -14,46 +14,35 @@ $(document).ready(function () {
 
     var relationshipObj = {
         gauss: [["tem", "details1"],
-        ["explore", "details14"]
-        ],
-
+        ["explore", "details14"]],
         surface: [
             ["tem", "details2"],
             ["led", "details5"],
             ["sed", "details8"],
             ["med", "details11"],
-            ["explore", "details15"]
-        ],
-
+            ["explore", "details15"]],
         fiber: [
             ["tem", "details3"],
             ["led", "details6"],
             ["sed", "details9"],
             ["med", "details12"],
-            ["explore", "details16"]
-        ],
-
+            ["explore", "details16"]],
         machine: [
             ["led", "details7"],
             ["sed", "details10"],
-            ["explore", "details17"]
-        ],
-
+            ["explore", "details17"]],
         tem: [
             ["gauss", "details1"],
             ["surface", "details2"],
             ["fiber", "details3"]],
-
         led: [
             ["surface", "details5"],
             ["fiber", "details6"],
             ["machine", "details7"]],
-
         sed: [
             ["surface", "details8"],
             ["fiber", "details9"],
             ["machine", "details10"]],
-
         med: [
             ["surface", "details11"],
             ["fiber", "details12"]],
@@ -67,7 +56,8 @@ $(document).ready(function () {
     var infoObj = {
         details1: {
             title: "Gauss and Tem",
-            info: "Here is some information about Gauss and tem"
+            info: "Here is some information about Gauss and tem",
+            img: ""
         },
         details2: {
             title: "Surface and Tem",
@@ -150,6 +140,7 @@ $(document).ready(function () {
             $(showMeArray[j]).show("fast");
         }//end of loop
         $("#info").empty();
+        $("#info").hide("fast");
     }//end of reset function
 
     function explore() {
@@ -163,7 +154,7 @@ $(document).ready(function () {
                 var test = relationshipObj[firstChoice][i][1];
                 $.each(infoObj, function (key, valueObj) {
                     if (key === test) {
-                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><br><br><br><div class='card-text text-center'>" + valueObj.info + "</div></div>");
+                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><img class='card-img-top' src='images/testImage.jpg>'<div class='card-text text-center'>" + valueObj.info + "</div></div><br>");
                         var button = $("<button>");
                         button.html("Reset");
                         button.on("click", function () {
@@ -171,6 +162,7 @@ $(document).ready(function () {
                         });
                         $("#info").append(infoDiv);
                         $("#innerInfo").append(button);
+                        $("#info").show("fast");
                     }//end of inner conditional
                 });//end of inner loop
             }//end of  outter conditional
