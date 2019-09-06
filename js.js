@@ -154,7 +154,7 @@ $(document).ready(function () {
                 var test = relationshipObj[firstChoice][i][1];
                 $.each(infoObj, function (key, valueObj) {
                     if (key === test) {
-                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><img class='card-img-top' src='images/testImage.jpg>'<div class='card-text text-center'>" + valueObj.info + "</div></div><br>");
+                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><img class='card-img-top' src='images/testImage.jpg>'<br><div class='card-text text-center'>" + valueObj.info + "</div></div><br><br>");
                         var button = $("<button>");
                         button.html("Reset");
                         button.on("click", function () {
