@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $("#info").hide();
+    $("#arrow").hide();
     var hideMe = {
         gauss: ["#surfaceCol", "#fiberCol", "#machineCol", "#ledCol", "#sedCol", "#medCol"],
         surface: ["#gaussCol", "#fiberCol", "#machineCol"],
@@ -9,12 +10,14 @@ $(document).ready(function () {
         led: ["#gaussCol", "#temCol", "#sedCol", "#medCol", "#exploreCol"],
         sed: ["#gaussCol", "#temCol", "#ledCol", "#medCol", "#exploreCol"],
         med: ["#gaussCol", "#machineCol", "#temCol", "#ledCol", "#sedCol", "#exploreCol"],
-        explore: ["#temCol", "#ledCol", "#sedCol", "#medCol"]
+        explore: ["#temCol", "#ledCol", "#sedCol", "#medCol"],
+        arrow: []
     }//end of hideMe object
 
     var relationshipObj = {
-        gauss: [["tem", "details1"],
-        ["explore", "details14"]],
+        gauss: [
+            ["tem", "details1"],
+            ["explore", "details14"]],
         surface: [
             ["tem", "details2"],
             ["led", "details5"],
@@ -57,7 +60,7 @@ $(document).ready(function () {
         details1: {
             title: "Gauss and Tem",
             info: "Here is some information about Gauss and tem",
-            img: ""
+            img: "images/testImage.jpg"
         },
         details2: {
             title: "Surface and Tem",
@@ -141,6 +144,7 @@ $(document).ready(function () {
         }//end of loop
         $("#info").empty();
         $("#info").hide("fast");
+        $("#arrow").hide("fast");
     }//end of reset function
 
     function explore() {
@@ -154,9 +158,9 @@ $(document).ready(function () {
                 var test = relationshipObj[firstChoice][i][1];
                 $.each(infoObj, function (key, valueObj) {
                     if (key === test) {
-                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><img src='images/testImage.jpg'>'<br><div class='card-text text-center'>" + valueObj.info + "</div></div><br><br>");
+                        var infoDiv = $("<div id='innerInfo' class='card-body shadow-lg'><div class='card-header'>" + "<h3>" + valueObj.title + "</h3>" + "</div><br><img class='images' src='" + valueObj.img + "'>'<br><div class='right card-text text-right'>" + valueObj.info + "</div></div><br><br>");
                         var button = $("<button>");
-                        button.html("Reset");
+                        button.html("GO BACK");
                         button.on("click", function () {
                             reset();
                         });
@@ -176,13 +180,16 @@ $(document).ready(function () {
         }//end of loop
         choiceArr.push(clickedId);
         console.log(choiceArr);
-        if (choiceArr[0] === choiceArr[1]) {
+        if (choiceArr[0] === choiceArr[1] || choiceArr[1] === "arrow") {
             reset();
+        } else if (choiceArr.length === 1) {
+            $("#arrow").show("fast");
         }
         else if (choiceArr.length === 2) {
             infoPanel();
-        } else if (clickedId === "explore") {
-            explore();
+            $("#arrow").hide("fast");
+        } else if (choiceArr[1] === "arrow") {
+            reset();
         } else if (choiceArr.indexOf(clickedId) === choiceArr[0] || choiceArr[1]) {
             reset();
         }//end of conditional

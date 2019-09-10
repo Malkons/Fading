@@ -16,3 +16,16 @@
 #info {
     float:right;
 }
+
+.images {
+    width: 33%;
+}
+
+.right {
+    display: block;
+}
+
+.bigger {
+    width:100%;
+    text-align: center;
+}
